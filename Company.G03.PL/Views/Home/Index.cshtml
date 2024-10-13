@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+</div>
+
+<form asp-action="Index" asp-controller="Employee" style="margin:140px auto;" >
+    @*
+    //we use the name attribute for binding data so that
+    //when the Index action starts looking for a source that provides it with the parameter that it needs
+    //it will look for the parameter name either in the segment or in the querystring or in the form
+    *@
+
+    <div class="row" style="display:flex; align-items:center; justify-content:center; height:46px;">
+        <div class="col-8" style="display:flex; align-items:center; ">
+            <input type="text" id="id" name="InputSearch" placeholder="Search Employees  .  .  ." class="form-control" style=" border-radius:23px;" />
+            
+        </div>
+   
+
+    </div>
+    <br />
+</form>

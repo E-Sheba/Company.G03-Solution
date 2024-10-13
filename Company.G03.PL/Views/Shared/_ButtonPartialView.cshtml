@@ -1,0 +1,22 @@
+﻿@model string
+<td>
+    <a asp-action="Details" asp-route-id="@Model" class="btn btn-success">
+        <img src="~/images/information_icon.png"  alt="Alternate Text" />
+        
+    </a>
+
+</td>
+<td>
+    <a asp-action="Edit" asp-route-id="@Model" class=" btn btn-warning">
+        <img src="~/images/pencil_edit_icon.png"  alt="Alternate Text" />
+        
+    </a>
+
+</td>
+<td>
+
+    <a asp-action="Delete" asp-route-id="@Model" class=" btn btn-danger">
+        <img src="~/images/delete_icon.png" alt="Alternate Text" />
+
+       </a>
+</td>

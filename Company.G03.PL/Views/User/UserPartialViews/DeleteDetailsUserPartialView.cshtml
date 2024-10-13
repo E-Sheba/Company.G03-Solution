@@ -1,0 +1,34 @@
+﻿@model UserViewModel
+
+<div class=" form-group mt-5">
+
+    <label asp-for="Id" class="col-form-label"></label>
+    <input asp-for="Id" readonly class="form-control" />
+
+</div>
+<div class=" form-group mt-5">
+
+    <label asp-for="FirstName" class="col-form-label"></label>
+    <input asp-for="FirstName" readonly class="form-control" />
+</div>
+<div class=" form-group mt-5">
+
+    <label asp-for="LastName" class="col-form-label"></label>
+    <input asp-for="LastName" readonly class="form-control" />
+
+</div>
+<div class=" form-group mt-5">
+
+    <label asp-for="Email" class="col-form-label"></label>
+    <input asp-for="Email" readonly class="form-control" />
+
+</div>
+<div>
+    <ul>
+
+        @foreach (var role in Model.Roles)
+        {
+            <li>@role</li>
+        }
+    </ul>
+</div>
