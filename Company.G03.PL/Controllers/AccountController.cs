@@ -132,9 +132,21 @@ namespace Company.G03.PL.Controllers
 
         #region Forget Password
         [HttpGet]
-        public IActionResult ForgetPassword()
+        public async Task<IActionResult> ForgetPassword(ForgetPasswordViewModel model = null)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var user = await _userManager.FindByEmailAsync(model.Email);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return View(model);
         }
 
         [HttpPost]
@@ -181,7 +193,7 @@ namespace Company.G03.PL.Controllers
                     ModelState.AddModelError(string.Empty, ex.Message);
                 }
             }
-            return View(model);
+            return RedirectToAction(nameof(ForgetPassword),model);
         }
 
 
